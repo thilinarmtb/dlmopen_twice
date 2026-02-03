@@ -10,7 +10,7 @@ lib:
 	gcc  -shared -o $(LIB) foo.o -ldl
 
 bin: lib
-	gcc $(CFLAGS) bar.c -o bar -Wl,-rpath,. -L. -lfoo -ldl
+	gcc $(CFLAGS) bar.c -o bar -ldl
 
 run: bin
 	./$(BIN)
